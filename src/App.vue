@@ -51,78 +51,79 @@
     <div class="promo">
       <div class="promo__img"></div>
     </div>
-    <div class="content">
+
+    <section class="section trend">
       <div class="container">
-        <div class="main-title content__main-title">
-          <p>Популярные товары</p>
+        <div class="title">
+          <h2 class="title__name">Популярные товары</h2>
         </div>
-        <div class="trend content__trend">
-          <div class="card trend__card">
+        <div class="trend__content">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card trend__card">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card trend__card">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card trend__card">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card trend__card">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card trend__card">
+          <div class="card trend__content-card">
             <div class="card__img"></div>
             <div class="card__description">
               <div class="card__text">
-                <span class="title card__item-title">iPhone 11 Pro</span>
-                <span class="price card__item-price">
+                <span class="card__text-title">iPhone 11 Pro</span>
+                <span class="card__text-price">
                   от
                   <b>69999 руб.</b>
                 </span>
@@ -130,12 +131,41 @@
             </div>
           </div>
         </div>
-        <div class="blog content__blog"></div>
       </div>
-    </div>
-    <div class="footer">
-      <div class="content footer__content"></div>
-    </div>
+    </section>
+
+    <section class="section news">
+      <div class="container">
+        <div class="title">
+          <h2 class="title__name">Последние новости</h2>
+        </div>
+        <div class="news__content">
+          <div class="news__card">
+            <div class="news__card-img">
+              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
+            </div>
+          </div>
+          <div class="news__card">
+            <div class="news__card-img">
+              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
+            </div>
+          </div>
+          <div class="news__card">
+            <div class="news__card-img">
+              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__info">
+          <h2 class="footer__text">Best mobile store in you city!</h2>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -171,13 +201,103 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
+.section {
+  overflow: hidden;
+  padding: 5px 0;
+}
 /** Base styles */
 
 /** Components(Elements) styles */
-.main-title {
+.news {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+  &__text {
+    opacity: 0;
+    color: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  &__card {
+    height: 250px;
+    background-color: rgb(241, 241, 241);
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-img {
+      background-image: url(./assets/img/card-item.png);
+      height: 250px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #242424;
+    }
+    &:hover {
+      cursor: pointer;
+      & .news__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(90, 90, 90, 0.7);
+        color: white;
+        font-size: 20px;
+        opacity: 1;
+      }
+    }
+    &:nth-of-type(1) {
+      flex-grow: 1;
+      &:hover {
+        flex-grow: 2;
+        &:nth-of-type(2) {
+          flex-grow: 1;
+        }
+        &:nth-of-type(3) {
+          flex-grow: 1;
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      flex-grow: 1;
+      &:hover {
+        flex-grow: 2;
+        &:nth-of-type(1) {
+          flex-grow: 1;
+        }
+        &:nth-of-type(3) {
+          flex-grow: 1;
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      flex-grow: 1;
+      &:hover {
+        flex-grow: 2;
+        &:nth-of-type(1) {
+          flex-grow: 1;
+        }
+        &:nth-of-type(2) {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}
+.title {
   text-align: center;
-  font-size: 32px;
-  font-weight: lighter;
+  margin: 40px 0;
+  &__name {
+    font-size: 32px;
+    font-weight: lighter;
+  }
 }
 .cart {
   position: relative;
@@ -209,21 +329,24 @@ body {
     line-height: 25px;
   }
 }
+
 .trend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  &__card {
-    margin: 20px;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-card {
+      margin: 0 20px;
+    }
   }
 }
+
 .icon {
   display: block;
   width: 35px;
   height: 35px;
 }
 .promo {
-  margin-bottom: 20px;
   &__img {
     height: 538px;
     background-image: url(./assets/img/header-promo.jpg);
@@ -274,9 +397,26 @@ body {
     align-items: center;
   }
 }
-.content {
-  &__main-title {
-    margin: 30px 0;
+// .content {
+//   &__trend {
+//     margin: 40px 0;
+//   }
+//   &__news {
+//     margin: 40px 0;
+//   }
+// }
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-top: 1px solid #e6e6e6;
+  &__text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #222;
   }
 }
 /** Grid, Conteinters styles */

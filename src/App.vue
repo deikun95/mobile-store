@@ -9,7 +9,7 @@
           <div class="navbar header__navbar">
             <ul class="navbar__list">
               <li class="navbar__item">
-                <a class="navbar__link" href>Главная</a>
+                <router-link to="/" class="navbar__link">Главная</router-link>
               </li>
               <li class="navbar__item">
                 <a class="navbar__link" href>Каталог</a>
@@ -22,8 +22,8 @@
               </li>
             </ul>
           </div>
-          <div class="cart navbar__cart">
-            <a class="navbar__link" href>
+          <div class="cart-icon navbar__cart">
+            <router-link to="/cart" class="navbar__link">
               <i>
                 <svg
                   class="icon navbar__icon"
@@ -43,126 +43,16 @@
                   />
                 </svg>
               </i>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
-    <div class="promo">
-      <div class="promo__img"></div>
-    </div>
-
-    <section class="section trend">
-      <div class="container">
-        <div class="title">
-          <h2 class="title__name">Популярные товары</h2>
-        </div>
-        <div class="trend__content">
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card trend__content-card">
-            <div class="card__img"></div>
-            <div class="card__description">
-              <div class="card__text">
-                <span class="card__text-title">iPhone 11 Pro</span>
-                <span class="card__text-price">
-                  от
-                  <b>69999 руб.</b>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section news">
-      <div class="container">
-        <div class="title">
-          <h2 class="title__name">Последние новости</h2>
-        </div>
-        <div class="news__content">
-          <div class="news__card">
-            <div class="news__card-img">
-              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
-            </div>
-          </div>
-          <div class="news__card">
-            <div class="news__card-img">
-              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
-            </div>
-          </div>
-          <div class="news__card">
-            <div class="news__card-img">
-              <div class="news__text">Врачи спасли котенка с помощью iPhone</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <router-view></router-view>
     <footer class="footer">
       <div class="container">
         <div class="footer__info">
-          <h2 class="footer__text">Best mobile store in you city!</h2>
+          <h2 class="footer__text">Best mobile store in your city</h2>
         </div>
       </div>
     </footer>
@@ -182,9 +72,10 @@ export default {};
   margin: 0;
   padding: 0;
 }
-li,
-a {
+li {
   list-style-type: none;
+}
+a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -225,7 +116,7 @@ body {
     transition: all 0.3s ease;
   }
   &__card {
-    height: 250px;
+    height: 270px;
     background-color: rgb(241, 241, 241);
     margin-right: 10px;
     transition: all 0.3s ease;
@@ -234,7 +125,7 @@ body {
     }
     &-img {
       background-image: url(./assets/img/card-item.png);
-      height: 250px;
+      height: 270px;
       background-size: cover;
       background-repeat: no-repeat;
       background-color: #242424;
@@ -299,7 +190,7 @@ body {
     font-weight: lighter;
   }
 }
-.cart {
+.cart-icon {
   position: relative;
 }
 .card {
@@ -308,7 +199,7 @@ body {
   padding: 20px;
   transition: all 0.3s ease;
   &:hover {
-    background-color: rgb(241, 241, 241);
+    background-color: #f1f1f1;
     cursor: pointer;
   }
   &__img {
@@ -397,14 +288,7 @@ body {
     align-items: center;
   }
 }
-// .content {
-//   &__trend {
-//     margin: 40px 0;
-//   }
-//   &__news {
-//     margin: 40px 0;
-//   }
-// }
+
 .footer {
   display: flex;
   justify-content: center;

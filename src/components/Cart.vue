@@ -67,11 +67,8 @@
     </section>
     <section class="submit">
       <div class="submit__btn-place">
-        <div class="submit__cover">
-          <div>
-            <button class="submit__btn">Оформить заказ</button>
-          </div>
-        </div>
+        <button class="submit__btn"></button>
+        <div class="submit__text">Оформить заказ</div>
       </div>
     </section>
   </div>
@@ -84,13 +81,45 @@ export default {};
 <style lang="scss">
 .submit {
   padding: 40px 0 84px 0;
+  &__text {
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    z-index: 5;
+  }
   &__btn-place {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      opacity: 0;
+      width: 145px;
+      height: 45px;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      transition: all 0.2s ease;
+    }
+    &:hover {
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 145px;
+        opacity: 1;
+        height: 45px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+      }
+    }
   }
   &__btn {
-    position: relative;
+    position: absolute;
     color: white;
     outline: none;
     font-size: 15px;
@@ -99,10 +128,7 @@ export default {};
     border: none;
     border-radius: 4px;
     background-color: #e83587;
-    transition: all 0.3s ease;
-    &:hover {
-      cursor: pointer;
-    }
+    transition: all 0.2s ease;
   }
 }
 .price {
@@ -126,6 +152,7 @@ export default {};
     border-radius: 4px;
     background-color: #e6e6e6;
     transition: all 0.3s ease;
+    font-size: 20px;
     &:hover {
       background-color: rgba(0, 0, 0, 0.2);
       cursor: pointer;

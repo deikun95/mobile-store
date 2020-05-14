@@ -108,6 +108,9 @@
             </div>
           </div>
         </div>
+        <div class="more__btn-place">
+          <button class="more__btn">Все новости</button>
+        </div>
       </div>
     </section>
   </div>
@@ -117,5 +120,27 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" >
+.more {
+  &__btn-place {
+    margin: 5px 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    outline: none;
+    font-size: 15px;
+    width: 145px;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+  }
+}
 </style>

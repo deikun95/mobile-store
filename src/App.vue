@@ -12,10 +12,10 @@
                 <router-link to="/" class="navbar__link">Главная</router-link>
               </li>
               <li class="navbar__item">
-                <a class="navbar__link" href>Каталог</a>
+                <router-link to="/catalog" class="navbar__link">Каталог</router-link>
               </li>
               <li class="navbar__item">
-                <a class="navbar__link" href>Контакты</a>
+                <router-link to="/contacts" class="navbar__link">Контакты</router-link>
               </li>
               <li class="navbar__item">
                 <a class="navbar__link" href>Личный кабинет</a>
@@ -25,6 +25,9 @@
           <div class="cart-icon navbar__cart">
             <router-link to="/cart" class="navbar__link">
               <i>
+                <div class="cart-icon__number">
+                  <span class="cart-icon__text">3</span>
+                </div>
                 <svg
                   class="icon navbar__icon"
                   height="456pt"
@@ -192,6 +195,25 @@ body {
 }
 .cart-icon {
   position: relative;
+  &:hover .navbar__icon {
+    fill: #cf4dbe;
+  }
+  &__number {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #e83587;
+    top: -10px;
+    right: 2px;
+    z-index: 1;
+    text-align: center;
+    padding: 1px 0;
+  }
+  &__text {
+    color: white;
+    font-style: normal;
+  }
 }
 .card {
   width: 275px;
@@ -250,9 +272,6 @@ body {
   &__icon {
     fill: white;
     transition: all 0.3s ease;
-    &:hover {
-      fill: #cf4dbe;
-    }
   }
   &__list {
     display: flex;

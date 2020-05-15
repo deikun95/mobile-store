@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="header">
+    <header class="header">
       <div class="container">
         <div class="header__content">
           <div class="logo header__logo">
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
     <router-view></router-view>
     <footer class="footer">
       <div class="container">
@@ -98,6 +98,16 @@ body {
 .section {
   overflow: hidden;
   padding: 5px 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
 }
 /** Base styles */
 
@@ -217,7 +227,7 @@ body {
 }
 .card {
   width: 275px;
-  height: 320px;
+  height: 360px;
   padding: 20px;
   transition: all 0.3s ease;
   &:hover {
@@ -240,6 +250,10 @@ body {
     align-items: center;
     justify-content: center;
     line-height: 25px;
+    color: black;
+  }
+  &__btn {
+    margin: 20px 0;
   }
 }
 
@@ -249,7 +263,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     &-card {
-      margin: 0 20px;
+      margin: 0 20px 20px 20px;
+      &:nth-last-child(-n + 3) {
+        margin: 0 20px;
+      } 
     }
   }
 }
@@ -309,6 +326,7 @@ body {
 }
 
 .footer {
+  user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;

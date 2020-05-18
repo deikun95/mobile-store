@@ -5,11 +5,44 @@
         <div class="content__header">
           <h2 class="content__title">
             <span class="content__title-name">Всего товаров: </span>
-            <b>25</b>
+            <b>{{ getProducts.length }}</b>
           </h2>
         </div>
         <div class="catalog__content">
           <div class="catalog__filter">
+            <ul class="filter__list">
+              <li class="filter__item--name">Цена</li>
+              <li class="filter__item">
+                <label class="filter__item-checkbox">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="filter__item-title">30000 - 40000</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="filter__item-checkbox">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="filter__item-title">40000 - 50000</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="filter__item-checkbox">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="filter__item-title">50000 - 60000</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="filter__item-checkbox">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="filter__item-title">60000 - 70000</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="filter__item-checkbox">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="filter__item-title">70000 - 80000</span>
+                </label>
+              </li>
+            </ul>
             <ul class="filter__list">
               <li class="filter__item--name">Цвет</li>
               <li class="filter__item">
@@ -109,171 +142,15 @@
                 </label>
               </li>
             </ul>
+            <div class="submit-btn">
+              <div class="more__btn-place">
+                <button class="more__btn">Применить</button>
+              </div>
+            </div>
           </div>
           <div class="catalog__items">
             <div class="trend__content">
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card trend__content-card">
-                <div class="card__img"></div>
-                <div class="card__description">
-                  <div class="card__text">
-                    <span class="card__text-title">iPhone 11 Pro</span>
-                    <span class="card__text-price">
-                      от
-                      <b>69999 руб.</b>
-                    </span>
-                  </div>
-                </div>
-                <div class="card__btn">
-                  <div class="submit__btn-place">
-                    <button class="submit__btn"></button>
-                    <div class="submit__text">Добавить в корзину</div>
-                  </div>
-                </div>
-              </div>
+              <CatalogItem v-for="product in getProducts" :key="product.id" :product="product" />
             </div>
           </div>
         </div>
@@ -283,66 +160,38 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+import CatalogItem from "./CatalogItem";
+export default {
+  components: {
+    CatalogItem
+  },
+  methods: {},
+  computed: {
+    ...mapGetters(["getProducts"])
+  }
+};
 </script>
 
-<style lang="scss">
-.submit {
-  padding: 40px 0 84px 0;
-  &__text {
-    color: white;
-    position: absolute;
-    font-size: 15px;
-    z-index: 5;
-  }
-
-  &__btn-place {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    &:after {
-      content: "";
-      display: block;
-      opacity: 0;
-      width: 170px;
-      height: 30px;
-      border-radius: 4px;
-      background-color: rgba(0, 0, 0, 0.1);
-      position: absolute;
-      transition: all 0.2s ease;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      &:after {
-        content: "";
-        display: block;
-        width: 170px;
-        opacity: 1;
-        height: 30px;
-        border-radius: 4px;
-        background-color: rgba(0, 0, 0, 0.1);
-        position: absolute;
-      }
-    }
-  }
-
+<style lang="scss" scoped>
+.more {
   &__btn {
-    position: absolute;
-    color: white;
     outline: none;
     font-size: 15px;
-    width: 170px;
+    width: 130px;
     height: 30px;
     border: none;
     border-radius: 4px;
-    background-color: #e83587;
+    background-color: #e6e6e6;
     transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
   }
 }
+
 .content {
   &__header {
     padding: 40px 0;
@@ -351,7 +200,14 @@ export default {};
     &-name {
       font-weight: normal;
     }
-  } 
+  }
+}
+.trend {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .catalog {
   &__content {
@@ -372,6 +228,9 @@ export default {};
 .filter {
   &__list {
     margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
   &__item {
     margin-bottom: 15px;

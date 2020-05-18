@@ -61,7 +61,7 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .submit {
   padding: 40px 0 84px 0;
   &__text {

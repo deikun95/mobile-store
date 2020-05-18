@@ -25,8 +25,8 @@
           <div class="cart-icon navbar__cart">
             <router-link to="/cart" class="navbar__link">
               <i>
-                <div class="cart-icon__number">
-                  <span class="cart-icon__text">3</span>
+                <div v-if="getProductCount" class="cart-icon__number">
+                  <span class="cart-icon__text">{{ getProductCount }}</span>
                 </div>
                 <svg
                   class="icon navbar__icon"
@@ -63,7 +63,13 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  name: "Main",
+  computed: {
+    ...mapGetters(["getProductCount"])
+  }
+};
 </script>
 
 <style lang="scss">
@@ -103,7 +109,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 .main {
@@ -112,89 +118,7 @@ body {
 /** Base styles */
 
 /** Components(Elements) styles */
-.news {
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-  }
-  &__text {
-    opacity: 0;
-    color: rgb(241, 241, 241);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
-  }
-  &__card {
-    height: 270px;
-    background-color: rgb(241, 241, 241);
-    margin-right: 10px;
-    transition: all 0.3s ease;
-    &:last-child {
-      margin-right: 0;
-    }
-    &-img {
-      background-image: url(./assets/img/card-item.png);
-      height: 270px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: #242424;
-    }
-    &:hover {
-      cursor: pointer;
-      & .news__text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(90, 90, 90, 0.7);
-        color: white;
-        font-size: 20px;
-        opacity: 1;
-      }
-    }
-    &:nth-of-type(1) {
-      flex-grow: 1;
-      &:hover {
-        flex-grow: 2;
-        &:nth-of-type(2) {
-          flex-grow: 1;
-        }
-        &:nth-of-type(3) {
-          flex-grow: 1;
-        }
-      }
-    }
-    &:nth-of-type(2) {
-      flex-grow: 1;
-      &:hover {
-        flex-grow: 2;
-        &:nth-of-type(1) {
-          flex-grow: 1;
-        }
-        &:nth-of-type(3) {
-          flex-grow: 1;
-        }
-      }
-    }
-    &:nth-of-type(3) {
-      flex-grow: 1;
-      &:hover {
-        flex-grow: 2;
-        &:nth-of-type(1) {
-          flex-grow: 1;
-        }
-        &:nth-of-type(2) {
-          flex-grow: 1;
-        }
-      }
-    }
-  }
-}
+
 .title {
   text-align: center;
   margin: 40px 0;
@@ -225,66 +149,13 @@ body {
     font-style: normal;
   }
 }
-.card {
-  width: 275px;
-  height: 360px;
-  padding: 20px;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-  &__img {
-    margin: 0 auto;
-    background-image: url(./assets/img/card-item.png);
-    width: 240px;
-    height: 200px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  &__text {
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 25px;
-    color: black;
-  }
-  &__btn {
-    margin: 20px 0;
-  }
-}
-
-.trend {
-  &__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    &-card {
-      margin: 0 20px 20px 20px;
-      &:nth-last-child(-n + 3) {
-        margin: 0 20px;
-      } 
-    }
-  }
-}
 
 .icon {
   display: block;
   width: 35px;
   height: 35px;
 }
-.promo {
-  &__img {
-    height: 538px;
-    background-image: url(./assets/img/header-promo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
+
 .navbar {
   &__icon {
     fill: white;

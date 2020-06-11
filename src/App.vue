@@ -142,7 +142,7 @@ body {
     right: 2px;
     z-index: 1;
     text-align: center;
-    padding: 1px 0;
+    padding: 3px 0;
   }
   &__text {
     color: white;

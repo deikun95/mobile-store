@@ -6,16 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    cartProduct: [
-      // {
-      //   name: "iPhone 11 Pro",
-      //   color: "белый",
-      //   capacity: 64,
-      //   price: 69999,
-      //   id: 1,
-      //   count: 1,
-      // },
-    ],
+    cartProduct: [],
     products: [
       {
         name: "iPhone 11 Pro",
@@ -66,6 +57,65 @@ export default new Vuex.Store({
         count: 0,
       },
     ],
+    priceFilter: [
+      {
+        id: 1,
+        minPrice: 30000,
+        maxPrice: 40000,
+      },
+      {
+        id: 2,
+        minPrice: 40000,
+        maxPrice: 50000,
+      },
+      {
+        id: 3,
+        minPrice: 50000,
+        maxPrice: 60000,
+      },
+    ],
+    colorFilter: [
+      {
+        id: 1,
+        color: "Белый",
+      },
+      {
+        id: 2,
+        color: "Черный",
+      },
+      {
+        id: 3,
+        color: "Золотой",
+      },
+    ],
+    capacityFilter: [
+      {
+        id: 1,
+        capacity: 32,
+      },
+      {
+        id: 2,
+        capacity: 128,
+      },
+      {
+        id: 3,
+        capacity: 512,
+      },
+    ],
+    sizeFilter: [
+      {
+        id: 1,
+        size: '4.7',
+      },
+      {
+        id: 2,
+        size: '5.8',
+      },
+      {
+        id: 3,
+        size: '6.5',
+      },
+    ],
   },
   getters: {
     getProducts: (state) => {
@@ -81,6 +131,18 @@ export default new Vuex.Store({
       }, 0);
       console.log(result);
       return result;
+    },
+    getPriceFilter: (state) => {
+      return state.priceFilter;
+    },
+    getColorFilter: (state) => {
+      return state.colorFilter;
+    },
+    getSizeFilter: (state) => {
+      return state.sizeFilter;
+    },
+    getCapacityFilter: (state) => {
+      return state.capacityFilter;
     },
   },
   mutations: {

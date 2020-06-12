@@ -6,7 +6,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    checked: [],
     cartProduct: [],
+    filteredProducts: [],
     products: [
       {
         name: "iPhone 11 Pro",
@@ -62,16 +64,19 @@ export default new Vuex.Store({
         id: 1,
         minPrice: 30000,
         maxPrice: 40000,
+        checked: "",
       },
       {
         id: 2,
         minPrice: 40000,
         maxPrice: 50000,
+        checked: "",
       },
       {
         id: 3,
         minPrice: 50000,
         maxPrice: 60000,
+        checked: "",
       },
     ],
     colorFilter: [
@@ -91,35 +96,41 @@ export default new Vuex.Store({
     capacityFilter: [
       {
         id: 1,
-        capacity: 32,
+        capacity: 64,
+        checked: "",
       },
       {
         id: 2,
         capacity: 128,
+        checked: "",
       },
       {
         id: 3,
         capacity: 512,
+        checked: "",
       },
     ],
     sizeFilter: [
       {
         id: 1,
-        size: '4.7',
+        size: "4.7",
       },
       {
         id: 2,
-        size: '5.8',
+        size: "5.8",
       },
       {
         id: 3,
-        size: '6.5',
+        size: "6.5",
       },
     ],
   },
   getters: {
     getProducts: (state) => {
-      return state.products;
+      if (!state.checked.length) {
+        return state.products;
+      }
+      return state.filteredProducts;
     },
     getCartProduct: (state) => {
       return state.cartProduct;
@@ -167,6 +178,33 @@ export default new Vuex.Store({
         (prod) => prod.id !== payload
       );
     },
+    filterProducts(state, payload) {
+      if (payload.checked === true && !state.checked.length) {
+        state.checked.push(1);
+        const filteredProducts = state.products.filter(
+          (prod) => prod.capacity === payload.capacity
+        );
+        state.filteredProducts.push(...filteredProducts);
+      } else if (payload.checked === true && state.checked.length) {
+        const filteredProducts = state.products.filter(
+          (prod) => prod.capacity === payload.capacity
+        );
+        if (filteredProducts !== state.filteredProducts) {
+          state.filteredProducts.push(...filteredProducts);
+        }
+        console.log(1);
+      } else if (payload.checked === false && state.filteredProducts.length) {
+        state.filteredProducts = state.filteredProducts.filter(
+          (prod) => prod.capacity !== payload.capacity
+        );
+      }
+      if (!state.filteredProducts.length) {
+        state.checked = [];
+      }
+
+      console.log(state);
+      // return (state.filteredProducts = []);
+    },
   },
   actions: {
     setAddToCart: ({ commit, state }, payload) => {
@@ -181,6 +219,9 @@ export default new Vuex.Store({
     },
     deleteCartProduct: ({ commit }, payload) => {
       commit("deleteCartProduct", payload);
+    },
+    getFilterValue: ({ commit }, payload) => {
+      commit("filterProducts", payload);
     },
   },
   modules: {},

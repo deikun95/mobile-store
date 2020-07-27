@@ -9,6 +9,17 @@ export default new Vuex.Store({
     checked: [],
     cartProduct: [],
     filteredProducts: [],
+    filter: {
+      color: {
+        title: "Цвет",
+        items: [
+          {
+            id: 1,
+            payload: { value: "Белый" },
+          },
+        ],
+      },
+    },
     products: [
       {
         name: "iPhone 11 Pro",
@@ -179,6 +190,7 @@ export default new Vuex.Store({
       );
     },
     filterProducts(state, payload) {
+      console.log(payload);
       if (payload.checked === true && !state.checked.length) {
         state.checked.push(1);
         const filteredProducts = state.products.filter(
@@ -222,7 +234,10 @@ export default new Vuex.Store({
     },
     getFilterValue: ({ commit }, payload) => {
       commit("filterProducts", payload);
+      console.log(payload)
     },
   },
-  modules: {},
+  modules: {
+    
+  },
 });

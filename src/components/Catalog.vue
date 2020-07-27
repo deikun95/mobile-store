@@ -72,7 +72,8 @@ export default {
   &__content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
+    padding: 0 60px;
   }
 }
 .catalog {

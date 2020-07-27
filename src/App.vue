@@ -17,9 +17,9 @@
               <li class="navbar__item">
                 <router-link to="/contacts" class="navbar__link">Контакты</router-link>
               </li>
-              <li class="navbar__item">
+              <!-- <li class="navbar__item">
                 <a class="navbar__link" href>Личный кабинет</a>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="cart-icon navbar__cart">
